@@ -91,7 +91,7 @@ exampleservice: onboard-exampleservice
 onboard-exampleservice:
 	sudo cp id_rsa key_import/exampleservice_rsa
 	sudo cp id_rsa.pub key_import/exampleservice_rsa.pub
-	sudo docker-compose -p $(BOOTSTRAP_PROJECT) -f $(BOOTSTRAP_YML) run xos_bootstrap_ui python /opt/xos/tosca/run.py None /opt/xos/onboard/exampleservice/exampleservice-onboard.yaml
+	sudo docker-compose -p $(BOOTSTRAP_PROJECT) -f $(BOOTSTRAP_YML) run xos_bootstrap_ui python /opt/xos/tosca/run.py None /opt/xos_services/exampleservice/xos/exampleservice-onboard.yaml
 	bash ../common/wait_for_onboarding_ready.sh 81 services/exampleservice
 	bash ../common/wait_for_onboarding_ready.sh 81 xos
 	bash ../common/wait_for_xos_port.sh 80
